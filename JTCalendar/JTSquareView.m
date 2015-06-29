@@ -1,15 +1,14 @@
 //
-//  JTCircleView.h
-//  JTCalendar
+//  JTSquareView.m
+//  Pods
 //
-//  Created by Jonathan Tribouharet
+//  Created by Adam Johnson on 6/29/15.
+//
 //
 
-#import "JTCircleView.h"
+#import "JTSquareView.h"
 
-// http://stackoverflow.com/questions/17038017/ios-draw-filled-circles
-
-@implementation JTCircleView
+@implementation JTSquareView
 
 - (instancetype)init
 {
@@ -24,21 +23,19 @@
     return self;
 }
 
-
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     CGContextSetFillColorWithColor(ctx, [self.backgroundColor CGColor]);
     CGContextFillRect(ctx, rect);
-
+    
     rect = CGRectInset(rect, .5, .5);
     
     CGContextSetStrokeColorWithColor(ctx, [self.color CGColor]);
     CGContextSetFillColorWithColor(ctx, [self.color CGColor]);
     
-    CGContextAddEllipseInRect(ctx, rect);
-    CGContextFillEllipseInRect(ctx, rect);
+    CGContextFillRect(ctx, rect);
     
     CGContextFillPath(ctx);
 }
