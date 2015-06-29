@@ -37,8 +37,10 @@
     CGContextSetStrokeColorWithColor(ctx, [self.color CGColor]);
     CGContextSetFillColorWithColor(ctx, [self.color CGColor]);
     
-    CGContextAddEllipseInRect(ctx, rect);
-    CGContextFillEllipseInRect(ctx, rect);
+//    CGContextAddEllipseInRect(ctx, rect);
+//    CGContextFillEllipseInRect(ctx, rect);
+    
+    CGContextFillRect(ctx, rect);
     
     CGContextFillPath(ctx);
 }
